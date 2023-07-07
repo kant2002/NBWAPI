@@ -865,7 +865,7 @@ namespace Nito.Collections
             }
         }
 
-#pragma warning disable CA1812
+
         [DebuggerNonUserCode]
         private sealed class DebugView
         {
@@ -885,6 +885,6 @@ namespace Nito.Collections
                 }
             }
         }
-#pragma warning restore CA1812
+
     }
 }
