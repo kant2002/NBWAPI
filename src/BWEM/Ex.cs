@@ -15,7 +15,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using NBWAPI;
 
-BWEM
+namespace BWEM
 {
     public static class Ex
     {

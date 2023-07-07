@@ -17,7 +17,7 @@ using System.Linq;
 using NBWAPI;
 using Nito.Collections;
 
-BWEM
+namespace BWEM
 {
     public class Graph
     {

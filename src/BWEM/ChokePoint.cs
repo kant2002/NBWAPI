@@ -15,7 +15,7 @@ using System.Diagnostics;
 using NBWAPI;
 using Nito.Collections;
 
-BWEM
+namespace BWEM
 {
     /// <summary>
     /// ChokePoints are frontiers that BWEM automatically computes from Brood War's maps

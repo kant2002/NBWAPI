@@ -14,7 +14,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using NBWAPI;
 
-BWEM
+namespace BWEM
 {
     /// <summary>
     /// After Areas and ChokePoints, Bases are the third kind of object BWEM automatically computes from Brood War's maps.

@@ -12,7 +12,7 @@
 
 using System;
 
-BWEM
+namespace BWEM
 {
     public readonly struct Altitude : IEquatable<Altitude>, IComparable<Altitude>
     {
