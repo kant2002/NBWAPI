@@ -34,6 +34,7 @@ namespace MarineHell
         private readonly HashSet<Position> _enemyBuildingMemory = new HashSet<Position>();
         private Strategy _selectedStrategy = Strategy.WaitFor50;
         private List<Position> _chokePointsCenters;
+        static Map map;
 
         public void Run()
         {
@@ -58,12 +59,13 @@ namespace MarineHell
             _self = _game.Self();
             _game.SetLocalSpeed(0);
 
-            Map.Instance.Initialize(_game);
+            map = new Map(_game);
+            map.Initialize();
 
             _chokePointsCenters = new List<Position>();
-            foreach (var c in Map.Instance.ChokePoints)
+            foreach (var c in map.ChokePoints)
             {
-                var sides = CalculateSides(c.Geometry);
+                var sides = CalculateSides(new Deque<WalkPosition>(c.Geometry));
                 var center = (sides.Left + sides.Right) / 2;
                 _chokePointsCenters.Add(center);
             }
@@ -298,7 +300,7 @@ namespace MarineHell
                 }
             }
 
-            foreach (var b in Map.Instance.Bases)
+            foreach (var b in map.Bases)
             {
                 // If this is a possible start location,
                 if (b.Starting)
@@ -535,14 +537,14 @@ namespace MarineHell
 
         private static Base GetNearestBaseLocation(TilePosition tilePosition)
         {
-            return Map.Instance.Bases.MinBy(x => x.Location.GetDistance(tilePosition));
+            return map.Bases.MinBy(x => x.Location.GetDistance(tilePosition));
         }
 
         private static List<TilePosition> GetShortestPath(TilePosition start, TilePosition end)
         {
             var shortestPath = new List<TilePosition>();
 
-            var it = Map.Instance.GetPath(start.ToPosition(), end.ToPosition(), out _).GetEnumerator();
+            var it = map.GetPath(start.ToPosition(), end.ToPosition(), out _).GetEnumerator();
 
             ChokePoint curr = null;
 
