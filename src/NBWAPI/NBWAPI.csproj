@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <ImplicitUsings>disable</ImplicitUsings>
+        <Nullable>disable</Nullable>
+        <Title>NBWAPI</Title>
+        <Copyright>Copyright © NBWAPI 2023</Copyright>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <PackageId>NBWAPI</PackageId>
+        <PackageDescription>
+            A pure .NET BWAPI client implementation.
+        </PackageDescription>
+        <PackageTags>api;ai;bots;starcraft;bwapi;startcraft-broodwar;broodwar;startcraft-bot;startcraft-broodwar-bot;startcraft-ai;bwapi-net;broodwar-bot;broodwar-api;</PackageTags>
+        <Version>0.5.0</Version>
+        <Authors>NBWAPI, Alejandro Coto Gutiérrez</Authors>
+        <Product>NBWAPI</Product>
+        <SignAssembly>False</SignAssembly>
+        <Description>A pure .NET BWAPI 4.4.0 client implementation using memory mapped files to communicate with Starcraft launched by BWAPI.</Description>
+        <PackageProjectUrl></PackageProjectUrl>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <RepositoryUrl></RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
+        <GenerateDocumentationFile>True</GenerateDocumentationFile>
+        <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+        <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
+        <EnableNETAnalyzers>True</EnableNETAnalyzers>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <None Include="..\..\.editorconfig" Link=".editorconfig" />
+      <None Include="..\..\LICENSE">
+        <Pack>True</Pack>
+        <PackagePath>\</PackagePath>
+      </None>
+      <None Include="..\..\README.md">
+        <Pack>True</Pack>
+        <PackagePath>\</PackagePath>
+      </None>
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <Nullable>disable</Nullable>
+        <Title>BWEM.</Title>
+        <Version>0.5.0</Version>
+        <Authors>NBWAPI, Alejandro Coto Gutiérrez</Authors>
+        <Description>A port of BWEM to .NET</Description>
+        <Copyright>Copyright © NBWAPI 2023</Copyright>
+        <PackageProjectUrl></PackageProjectUrl>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <RepositoryUrl></RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageTags>api;ai;bots;starcraft;bwapi;startcraft-broodwar;broodwar;startcraft-bot;startcraft-broodwar-bot;startcraft-ai;bwapi-net;broodwar-bot;broodwar-api;</PackageTags>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <IncludeSymbols>True</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="..\..\LICENSE">
+            <Pack>True</Pack>
+            <PackagePath>\</PackagePath>
+        </None>
+        <None Include="..\..\README.md">
+            <Pack>True</Pack>
+            <PackagePath>\</PackagePath>
+        </None>
+        <None Include="..\..\CHANGELOG.md">
+            <Pack>True</Pack>
+            <PackagePath>\</PackagePath>
+        </None>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\NBWAPI\NBWAPI.csproj" />
+    </ItemGroup>
+
+</Project>
