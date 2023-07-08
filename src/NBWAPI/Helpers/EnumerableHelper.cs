@@ -35,7 +35,7 @@ namespace NBWAPI
         /// <typeparam name="T">The type of the elements in the array.</typeparam>
         /// <param name="source">The array to make readonly.</param>
         /// <exception cref="ArgumentNullException">If the collection is null.</exception>
-        /// <returns>A <see cref="ReadOnlyCollection<T>"/> of the the array.</returns>
+        /// <returns>A <see cref="ReadOnlyCollection{T}"/> of the the array.</returns>
         /// <exception cref="ArgumentNullException">If the array is null.</exception>
         public static ReadOnlyCollection<T> AsReadOnly<T>(this T[] source)
         {
@@ -53,7 +53,7 @@ namespace NBWAPI
         /// <typeparam name="TKey">The type of the keys of the dictionary.</typeparam>
         /// <typeparam name="TValue">The type of the values of the dictionary.</typeparam>
         /// <param name="dictionary">The dictionary to make readonly.</param>
-        /// <returns>A <see cref="ReadOnlyDictionary<TKey, TValue>"/> of the dictionary.</returns>
+        /// <returns>A <see cref="ReadOnlyDictionary{TKey, TValue}"/> of the dictionary.</returns>
         public static ReadOnlyDictionary<TKey, TValue> AsReadOnly<TKey, TValue>(this Dictionary<TKey, TValue> dictionary)
         {
             return new ReadOnlyDictionary<TKey, TValue>(dictionary);

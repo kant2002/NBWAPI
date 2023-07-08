@@ -109,7 +109,7 @@ namespace NBWAPI
         /// Retrieves the center of the region. This position is used as the node
         /// of the region.
         /// </summary>
-        /// <returns>A {@link Position} indicating the center location of the Region, in pixels.</returns>
+        /// <returns>A <see cref="Position"/> indicating the center location of the Region, in pixels.</returns>
         public Position GetCenter()
         {
             return _center;
@@ -234,7 +234,7 @@ namespace NBWAPI
         /// Also has the ability to filter the units before the creation of the List<Unit>.
         /// </summary>
         /// <param name="pred">If this parameter is used, it is a UnitFilter or function predicate that will retrieve only the units whose attributes match the given criteria. If omitted, then a default value of null is used, in which case there is no filter.</param>
-        /// <returns>A List<Unit> containing all units in this region that have met the requirements
+        /// <returns>A <see cref="List{Unit}"/> containing all units in this region that have met the requirements
         /// of pred.</returns>
         /// <remarks>@seeUnitFilter</remarks>
         public List<Unit> GetUnits(UnitFilter pred)

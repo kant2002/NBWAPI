@@ -99,7 +99,7 @@ namespace NBWAPI
         /// Retrieves the player's force. A force is the team that the player is
         /// playing on.
         /// </summary>
-        /// <returns>The {@link Force} object that the player is part of.</returns>
+        /// <returns>The <see cref="Force"/> object that the player is part of.</returns>
         public Force GetForce()
         {
             return _game.GetForce(_playerData.GetForce());

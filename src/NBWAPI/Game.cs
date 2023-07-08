@@ -348,7 +348,7 @@ namespace NBWAPI
         /// Retrieves the set of all teams/forces. Forces are commonly seen in @UMS
         /// game types and some others such as @TvB and the team versions of game types.
         /// </summary>
-        /// <returns>List<Force> containing all forces in the game.</returns>
+        /// <returns><see cref="List{Force}"/> containing all forces in the game.</returns>
         public List<Force> GetForces()
         {
             return _forceSet;
@@ -358,7 +358,7 @@ namespace NBWAPI
         /// Retrieves the set of all players in the match. This includes the neutral
         /// player, which owns all the resources and critters by default.
         /// </summary>
-        /// <returns>List<Player> containing all players in the game.</returns>
+        /// <returns><see cref="List{Player}"/> containing all players in the game.</returns>
         public List<Player> GetPlayers()
         {
             return _playerSet;
@@ -370,8 +370,9 @@ namespace NBWAPI
         /// visible to the player.
         /// <p>
         /// Units that are inside refineries are not included in this set.
+        /// </p>
         /// </summary>
-        /// <returns>List<Unit> containing all known units in the game.</returns>
+        /// <returns><see cref="List{Unit}"/> containing all known units in the game.</returns>
         public List<Unit> GetAllUnits()
         {
             return _allUnits;
@@ -380,7 +381,7 @@ namespace NBWAPI
         /// <summary>
         /// Retrieves the set of all accessible @minerals in the game.
         /// </summary>
-        /// <returns>List<Unit> containing @minerals</returns>
+        /// <returns><see cref="List{Unit}"/> containing @minerals</returns>
         public List<Unit> GetMinerals()
         {
             return GetAllUnits().Where((u) => u.GetUnitType().IsMineralField()).ToList();
@@ -389,7 +390,7 @@ namespace NBWAPI
         /// <summary>
         /// Retrieves the set of all accessible @geysers in the game.
         /// </summary>
-        /// <returns>List<Unit> containing @geysers</returns>
+        /// <returns><see cref="List{Unit}"/> containing @geysers</returns>
         public List<Unit> GetGeysers()
         {
             return GetAllUnits().Where((u) => u.GetUnitType() == UnitType.Resource_Vespene_Geyser).ToList();
@@ -399,7 +400,7 @@ namespace NBWAPI
         /// Retrieves the set of all accessible neutral units in the game. This
         /// includes @minerals, @geysers, and @critters.
         /// </summary>
-        /// <returns>List<Unit> containing all neutral units.</returns>
+        /// <returns><see cref="List{Unit}"/> containing all neutral units.</returns>
         public List<Unit> GetNeutralUnits()
         {
             return GetAllUnits().Where((u) => u.GetPlayer().Equals(Neutral())).ToList();
@@ -410,8 +411,9 @@ namespace NBWAPI
         /// game.
         /// <p>
         /// This set includes resources that have been mined out or are inaccessible.
+        /// </p>
         /// </summary>
-        /// <returns>List<Unit> containing static @minerals</returns>
+        /// <returns><see cref="List{Unit}"/> containing static @minerals</returns>
         public List<Unit> GetStaticMinerals()
         {
             return _staticMinerals;
@@ -422,8 +424,9 @@ namespace NBWAPI
         /// game.
         /// <p>
         /// This set includes resources that are inaccessible.
+        /// </p>
         /// </summary>
-        /// <returns>List<Unit> containing static @geysers</returns>
+        /// <returns><see cref="List{Unit}"/> containing static @geysers</returns>
         public List<Unit> GetStaticGeysers()
         {
             return _staticGeysers;
@@ -434,8 +437,9 @@ namespace NBWAPI
         /// etc.) that were available at the beginning of the game.
         /// <p>
         /// This set includes units that are inaccessible.
+        /// </p>
         /// </summary>
-        /// <returns>List<Unit> containing static neutral units</returns>
+        /// <returns><see cref="List{Unit}"/> containing static neutral units</returns>
         public List<Unit> GetStaticNeutralUnits()
         {
             return _staticNeutralUnits;
@@ -455,7 +459,7 @@ namespace NBWAPI
         /// <summary>
         /// Retrieves the set of all accessible bullets.
         /// </summary>
-        /// <returns>List<Bullet> containing all accessible {@link Bullet} objects.</returns>
+        /// <returns><see cref="List{Bullet}"/> containing all accessible <see cref="Bullet"/> objects.</returns>
         public List<Bullet> GetBullets()
         {
             return _bullets.Where(x => x.Exists()).ToList();
@@ -465,6 +469,7 @@ namespace NBWAPI
         /// Retrieves the set of all accessible @Nuke dots.
         /// <p>
         /// Nuke dots are the red dots painted by a @Ghost when using the nuclear strike ability.
+        /// </p>
         /// </summary>
         /// <returns>Set of Positions giving the coordinates of nuke locations.</returns>
         public List<Position> GetNukeDots()
@@ -473,10 +478,10 @@ namespace NBWAPI
         }
 
         /// <summary>
-        /// Retrieves the {@link Force} object associated with a given identifier.
+        /// Retrieves the <see cref="Force"/> object associated with a given identifier.
         /// </summary>
         /// <param name="forceID">The identifier for the Force object.</param>
-        /// <returns>{@link Force} object mapped to the given forceID. Returns null if the given identifier is invalid.</returns>
+        /// <returns><see cref="Force"/> object mapped to the given forceID. Returns null if the given identifier is invalid.</returns>
         public Force GetForce(int forceID)
         {
             if (forceID < 0 || forceID >= _forces.Length)
@@ -595,9 +600,9 @@ namespace NBWAPI
         }
 
         /// <summary>
-        /// Retrieves the position of the user's mouse on the screen, in {@link Position} coordinates.
+        /// Retrieves the position of the user's mouse on the screen, in <see cref="Position"/> coordinates.
         /// </summary>
-        /// <returns>{@link Position} indicating the location of the mouse. Returns {@link Position#Unknown} if {@link Flag#UserInput} is disabled.</returns>
+        /// <returns><see cref="Position"/> indicating the location of the mouse. Returns <see cref="Position.Unknown"/> if {@link Flag#UserInput} is disabled.</returns>
         public Position GetMousePosition()
         {
             return new Position(_clientData.GameData.GetMouseX(), _clientData.GameData.GetMouseY());
@@ -631,8 +636,9 @@ namespace NBWAPI
         /// Retrieves the top left position of the viewport from the top left corner of the
         /// map, in pixels.
         /// </summary>
-        /// <returns>{@link Position} containing the coordinates of the top left corner of the game's viewport. Returns {@link Position#Unknown} always if {@link Flag#UserInput} is disabled.</returns>
-        /// <remarks>@see#setScreenPosition</remarks>
+        /// <returns><see cref="Position"/> containing the coordinates of the top left corner of the game's viewport. Returns <see cref="Position.Unknown"/> always if {@link Flag#UserInput} is disabled.</returns>
+        /// <remarks><see cref="SetScreenPosition(int, int)"/></remarks>
+        /// <remarks><see cref="SetScreenPosition(Position)"/></remarks>
         public Position GetScreenPosition()
         {
             return new Position(_clientData.GameData.GetScreenX(), _clientData.GameData.GetScreenY());
@@ -649,7 +655,7 @@ namespace NBWAPI
         /// </summary>
         /// <param name="x">The x coordinate to move the screen to, in pixels.</param>
         /// <param name="y">The y coordinate to move the screen to, in pixels.</param>
-        /// <remarks>@see#getScreenPosition</remarks>
+        /// <remarks><see cref="GetScreenPosition"/></remarks>
         public void SetScreenPosition(int x, int y)
         {
             AddCommand(CommandType.SetScreenPosition, x, y);
@@ -674,8 +680,9 @@ namespace NBWAPI
         /// <summary>
         /// Checks if the state of the given flag is enabled or not.
         /// <p>
-        /// Flags may only be enabled at the start of the match during the {@link BWEventListener#onStart}
+        /// Flags may only be enabled at the start of the match during the <see cref="IBWEventListener.OnStart"/>
         /// callback.
+        /// </p>
         /// </summary>
         /// <param name="flag">The {@link Flag} entry describing the flag's effects on BWAPI.</param>
         /// <returns>true if the given flag is enabled, false if the flag is disabled.</returns>
@@ -688,10 +695,11 @@ namespace NBWAPI
         /// <summary>
         /// Enables the state of a given flag.
         /// <p>
-        /// Flags may only be enabled at the start of the match during the {@link BWEventListener#onStart}
+        /// Flags may only be enabled at the start of the match during the <see cref="IBWEventListener.OnStart"/>
         /// callback.
+        /// </p>
         /// </summary>
-        /// <param name="flag">The {@link Flag} entry describing the flag's effects on BWAPI.</param>
+        /// <param name="flag">The <see cref="Fla"/> entry describing the flag's effects on BWAPI.</param>
         /// <remarks>@seeFlag</remarks>
         public void EnableFlag(Flag flag)
         {
@@ -714,7 +722,7 @@ namespace NBWAPI
         /// <param name="tileX">The X position, in tiles.</param>
         /// <param name="tileY">The Y position, in tiles.</param>
         /// <param name="pred">A function predicate that indicates which units are included in the returned set.</param>
-        /// <returns>A List<Unit> object consisting of all the units that have any part of them on the
+        /// <returns>A <see cref="List{Unit}"/> object consisting of all the units that have any part of them on the
         /// given build tile.</returns>
         public List<Unit> GetUnitsOnTile(int tileX, int tileY, UnitFilter pred)
         {
@@ -738,7 +746,7 @@ namespace NBWAPI
         /// <param name="right">The X coordinate of the right position of the bounding box, in pixels.</param>
         /// <param name="bottom">The Y coordinate of the bottom position of the bounding box, in pixels.</param>
         /// <param name="pred">A function predicate that indicates which units are included in the returned set.</param>
-        /// <returns>A List<Unit> object consisting of all the units that have any part of them within the
+        /// <returns>A <see cref="List{Unit}"/> object consisting of all the units that have any part of them within the
         /// given rectangle bounds.</returns>
         public List<Unit> GetUnitsInRectangle(int left, int top, int right, int bottom, UnitFilter pred)
         {
@@ -768,7 +776,7 @@ namespace NBWAPI
         /// <param name="y">The y coordinate of the center, in pixels.</param>
         /// <param name="radius">The radius from the center, in pixels, to include units.</param>
         /// <param name="pred">A function predicate that indicates which units are included in the returned set.</param>
-        /// <returns>A List<Unit> object consisting of all the units that have any part of them within the
+        /// <returns>A <see cref="List{Unit}"/> object consisting of all the units that have any part of them within the
         /// given radius from the center position.</returns>
         public List<Unit> GetUnitsInRadius(int x, int y, int radius, UnitFilter pred)
         {
@@ -908,7 +916,7 @@ namespace NBWAPI
         /// <returns>String object containing SHA-1 hash.
         /// <p>
         /// Campaign maps will return a hash of their internal map chunk components(.chk), while
-        /// standard maps will return a hash of their entire map archive (.scm,.scx).</returns>
+        /// standard maps will return a hash of their entire map archive (.scm,.scx).</p></returns>
         public string MapHash()
         {
             return _mapHash;
@@ -1804,7 +1812,7 @@ namespace NBWAPI
         /// splits the set into groups of 12 and issues the same command to each of them. If a unit
         /// is not capable of executing the command, then it is simply ignored.
         /// </summary>
-        /// <param name="units">A List<Unit> containing all the units to issue the command for.</param>
+        /// <param name="units">A <see cref="List{Unit}"/> containing all the units to issue the command for.</param>
         /// <param name="command">A {@link UnitCommand} object containing relevant information about the command to be issued. The {@link Unit} object associated with the command will be ignored.</param>
         /// <returns>true if any one of the units in the List<Unit> were capable of executing the
         /// command, and false if none of the units were capable of executing the command.</returns>
@@ -1817,7 +1825,7 @@ namespace NBWAPI
         /// Retrieves the set of units that are currently selected by the user outside of
         /// BWAPI. This function requires that{@link Flag#UserInput} be enabled.
         /// </summary>
-        /// <returns>A List<Unit> containing the user's selected units. If {@link Flag#UserInput} is disabled,
+        /// <returns>A <see cref="List{Unit}"/> containing the user's selected units. If {@link Flag#UserInput} is disabled,
         /// then this set is always empty.</returns>
         /// <remarks>@see#enableFlag</remarks>
         public List<Unit> GetSelectedUnits()

@@ -2,7 +2,7 @@ namespace NBWAPI
 {
     /// <summary>
     /// Enumeration of available text sizes.
-    /// </summary
+    /// </summary>
     public enum TextSize
     {
         Small = 0,

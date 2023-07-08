@@ -9,18 +9,22 @@ namespace NBWAPI
     /// of non-melee attacks or special abilities that would normally be visible through
     /// human eyes (A lurker spike or a Queen's flying parasite), allowing quicker reaction
     /// to unavoidable consequences.
+    /// </p>
     /// <p>
     /// For example, ordering medics to restore units that are about to receive a lockdown
     /// to compensate for latency and minimize its effects. You can't know entirely which unit
     /// will be receiving a lockdown unless you can detect the lockdown missile using the
-    /// {@link Bullet} class.
+    /// <see cref="Bullet"/> class.
+    /// </p>
     /// <p>
-    /// {@link Bullet} objects are re-used after they are destroyed, however their ID is updated when it
+    /// <see cref="Bullet"/> objects are re-used after they are destroyed, however their ID is updated when it
     /// represents a new Bullet.
+    /// </p>
     /// <p>
-    /// If {@link Flag#CompleteMapInformation} is disabled, then a {@link Bullet} is accessible if and only if
+    /// If {@link Flag#CompleteMapInformation} is disabled, then a <see cref="Bullet"/> is accessible if and only if
     /// it is visible. Otherwise if {@link Flag#CompleteMapInformation} is enabled, then all Bullets
     /// in the game are accessible.
+    /// </p>
     /// </summary>
     /// <remarks>
     /// @seeGame#getBullets
@@ -40,7 +44,7 @@ namespace NBWAPI
         }
 
         /// <summary>
-        /// Retrieves a unique identifier for the current {@link Bullet}.
+        /// Retrieves a unique identifier for the current <see cref="Bullet"/>.
         /// </summary>
         /// <returns>An integer value containing the identifier.</returns>
         public int GetID()
@@ -49,14 +53,16 @@ namespace NBWAPI
         }
 
         /// <summary>
-        /// Checks if the {@link Bullet} exists in the view of the BWAPI player.
+        /// Checks if the <see cref="Bullet"/> exists in the view of the BWAPI player.
         /// <p>
-        /// If {@link Flag#CompleteMapInformation} is disabled, and a {@link Bullet} is not visible, then the
+        /// If {@link Flag#CompleteMapInformation} is disabled, and a <see cref="Bullet"/> is not visible, then the
         /// return value will be false regardless of the Bullet's true existence. This is because
         /// absolutely no state information on invisible enemy bullets is made available to the AI.
+        /// </p>
         /// <p>
         /// If {@link Flag#CompleteMapInformation} is enabled, then this function is accurate for all
-        /// {@link Bullet} information.
+        /// <see cref="Bullet"/> information.
+        /// </p>
         /// </summary>
         /// <returns>true if the bullet exists or is visible, false if the bullet was destroyed or has gone out of scope.</returns>
         /// <remarks>
@@ -71,23 +77,23 @@ namespace NBWAPI
         /// <summary>
         /// Retrieves the {@link Player} interface that owns the Bullet.
         /// </summary>
-        /// <returns>The owning {@link Player} object. Returns null if the {@link Player} object for this {@link Bullet} is inaccessible.</returns>
+        /// <returns>The owning {@link Player} object. Returns null if the {@link Player} object for this <see cref="Bullet"/> is inaccessible.</returns>
         public Player GetPlayer()
         {
             return _game.GetPlayer(_bulletData.GetPlayer());
         }
 
         /// <summary>
-        /// Retrieves the type of this {@link Bullet}.
+        /// Retrieves the type of this <see cref="Bullet"/>.
         /// </summary>
-        /// <returns>A {@link BulletType} representing the Bullet's type. Returns {@link BulletType#Unknown} if the {@link Bullet} is inaccessible.</returns>
+        /// <returns>A {@link BulletType} representing the Bullet's type. Returns {@link BulletType#Unknown} if the <see cref="Bullet"/> is inaccessible.</returns>
         public BulletType GetBulletType()
         {
             return _bulletData.GetBulletType();
         }
 
         /// <summary>
-        /// Retrieves the {@link Unit} that the {@link Bullet} spawned from.
+        /// Retrieves the {@link Unit} that the <see cref="Bullet"/> spawned from.
         /// </summary>
         /// <returns>The owning {@link Unit} object. Returns null if the source can not be identified or is inaccessible.</returns>
         /// <remarks>@see#getTarget</remarks>
@@ -99,7 +105,7 @@ namespace NBWAPI
         /// <summary>
         /// Retrieves the Bullet's current position.
         /// </summary>
-        /// <returns>A {@link Position} containing the Bullet's current coordinates. Returns {@link Position#Unknown} if the {@link Bullet} is inaccessible.</returns>
+        /// <returns>A <see cref="Position"/> containing the Bullet's current coordinates. Returns <see cref="Position.Unknown"/> if the <see cref="Bullet"/> is inaccessible.</returns>
         /// <remarks>@see#getTargetPosition</remarks>
         public Position GetPosition()
         {
@@ -107,10 +113,10 @@ namespace NBWAPI
         }
 
         /// <summary>
-        /// Retrieve's the direction the {@link Bullet} is facing. If the angle is 0, then
-        /// the {@link Bullet} is facing right.
+        /// Retrieve's the direction the <see cref="Bullet"/> is facing. If the angle is 0, then
+        /// the <see cref="Bullet"/> is facing right.
         /// </summary>
-        /// <returns>A double representing the direction the {@link Bullet} is facing. Returns 0.0 if the bullet is inaccessible.</returns>
+        /// <returns>A double representing the direction the <see cref="Bullet"/> is facing. Returns 0.0 if the bullet is inaccessible.</returns>
         public double GetAngle()
         {
             return _bulletData.GetAngle();
@@ -119,7 +125,7 @@ namespace NBWAPI
         /// <summary>
         /// Retrieves the X component of the Bullet's velocity, measured in pixels per frame.
         /// </summary>
-        /// <returns>A double representing the number of pixels moved on the X axis per frame. Returns 0.0 if the {@link Bullet} is inaccessible.</returns>
+        /// <returns>A double representing the number of pixels moved on the X axis per frame. Returns 0.0 if the <see cref="Bullet"/> is inaccessible.</returns>
         /// <remarks>
         /// @see#getVelocityY
         /// @see#getAngle
@@ -132,7 +138,7 @@ namespace NBWAPI
         /// <summary>
         /// Retrieves the Y component of the Bullet's velocity, measured in pixels per frame.
         /// </summary>
-        /// <returns>A double representing the number of pixels moved on the Y axis per frame. Returns 0.0 if the {@link Bullet} is inaccessible.</returns>
+        /// <returns>A double representing the number of pixels moved on the Y axis per frame. Returns 0.0 if the <see cref="Bullet"/> is inaccessible.</returns>
         /// <remarks>
         /// @see#getVelocityX
         /// @see#getAngle
@@ -143,9 +149,9 @@ namespace NBWAPI
         }
 
         /// <summary>
-        /// Retrieves the Unit interface that the {@link Bullet} is heading to.
+        /// Retrieves the Unit interface that the <see cref="Bullet"/> is heading to.
         /// </summary>
-        /// <returns>The target Unit object, if one exists. Returns null if the Bullet's target {@link Unit} is inaccessible, the {@link Bullet} is targetting the ground, or if the {@link Bullet} itself is inaccessible.</returns>
+        /// <returns>The target Unit object, if one exists. Returns null if the Bullet's target {@link Unit} is inaccessible, the <see cref="Bullet"/> is targetting the ground, or if the <see cref="Bullet"/> itself is inaccessible.</returns>
         /// <remarks>
         /// @see#getTargetPosition
         /// @see#getSource
@@ -156,9 +162,9 @@ namespace NBWAPI
         }
 
         /// <summary>
-        /// Retrieves the target position that the {@link Bullet} is heading to.
+        /// Retrieves the target position that the <see cref="Bullet"/> is heading to.
         /// </summary>
-        /// <returns>A {@link Position} indicating where the {@link Bullet} is headed. Returns {@link Position#Unknown} if the bullet is inaccessible.</returns>
+        /// <returns>A <see cref="Position"/> indicating where the <see cref="Bullet"/> is headed. Returns <see cref="Position.Unknown"/> if the bullet is inaccessible.</returns>
         /// <remarks>
         /// @see#getTarget
         /// @see#getPosition
@@ -174,8 +180,9 @@ namespace NBWAPI
         /// Bullets are not permanent objects, so they will often have a limited life span.
         /// This life span is measured in frames. Normally a Bullet will reach its target
         /// before being removed.
+        /// </p>
         /// </summary>
-        /// <returns>An integer representing the remaining number of frames until the {@link Bullet} self-destructs. Returns 0 if the {@link Bullet} is inaccessible.</returns>
+        /// <returns>An integer representing the remaining number of frames until the <see cref="Bullet"/> self-destructs. Returns 0 if the <see cref="Bullet"/> is inaccessible.</returns>
         public int GetRemoveTimer()
         {
             return _bulletData.GetRemoveTimer();
@@ -189,8 +196,8 @@ namespace NBWAPI
         /// <summary>
         /// Retrieves the visibility state of the Bullet.
         /// </summary>
-        /// <param name="player">If this parameter is specified, then the Bullet's visibility to the given player is checked. If this parameter is omitted, then a default value of null is used, which will check if the BWAPI player has vision of the {@link Bullet}.</param>
-        /// <returns>true if the {@link Bullet} is visible to the specified player, false if the {@link Bullet} is not visible to the specified player.</returns>
+        /// <param name="player">If this parameter is specified, then the Bullet's visibility to the given player is checked. If this parameter is omitted, then a default value of null is used, which will check if the BWAPI player has vision of the <see cref="Bullet"/>.</param>
+        /// <returns>true if the <see cref="Bullet"/> is visible to the specified player, false if the <see cref="Bullet"/> is not visible to the specified player.</returns>
         public bool IsVisible(Player player)
         {
             return player == null ? IsVisible() : _bulletData.IsVisible(player.GetID());

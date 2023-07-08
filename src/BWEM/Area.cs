@@ -90,7 +90,7 @@ public class Area : IEquatable<Area>
 
     /// <summary>
     /// Gets the unique id > 0 of the group of Areas which are accessible from this Area.
-    /// For each pair (a, b) of Areas: a->GroupId() == b->GroupId()  <==>  a->AccessibleFrom(b)
+    /// For each pair (a, b) of Areas: a->GroupId() == b->GroupId()  &lt;==>  a->AccessibleFrom(b)
     /// A groupId uniquely identifies a maximum set of mutually accessible Areas, that is, in the absence of blocking ChokePoints, a continent.
     /// </summary>
     public GroupId GroupId

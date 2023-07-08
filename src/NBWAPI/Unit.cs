@@ -164,7 +164,7 @@ namespace NBWAPI
         /// and {@link UnitType#dimensionDown}, which is conveniently expressed in {@link Unit#getLeft},
         /// {@link Unit#getTop}, {@link Unit#getRight}, and {@link Unit#getBottom} respectively.
         /// </summary>
-        /// <returns>{@link Position} object representing the unit's current position. Returns {@link Position#Unknown} if this unit is inaccessible.</returns>
+        /// <returns><see cref="Position"/> object representing the unit's current position. Returns <see cref="Position.Unknown"/> if this unit is inaccessible.</returns>
         /// <remarks>
         /// @see#getTilePosition
         /// @see#getInitialPosition
@@ -394,7 +394,7 @@ namespace NBWAPI
         /// Distance is calculated from the edge of this unit, using Starcraft's own distance
         /// algorithm. Ignores collisions.
         /// </summary>
-        /// <param name="target">A {@link Position} to calculate the distance to.</param>
+        /// <param name="target">A <see cref="Position"/> to calculate the distance to.</param>
         /// <returns>An integer representation of the number of pixels between this unit and the
         /// target.</returns>
         public int GetDistance(Position target)
@@ -493,7 +493,7 @@ namespace NBWAPI
         /// return true if one of the unit's corners is on walkable terrain (i.e. if the unit is expected
         /// to return to the walkable terrain).
         /// </summary>
-        /// <param name="target">A {@link Position} or a {@link Unit} that is used to determine if this unit has a path to the target.</param>
+        /// <param name="target">A <see cref="Position"/> or a {@link Unit} that is used to determine if this unit has a path to the target.</param>
         /// <returns>true If there is a path between this unit and the target position, otherwise it will return false.</returns>
         /// <remarks>@seeGame#hasPath</remarks>
         public bool HasPath(Position target)
@@ -558,8 +558,8 @@ namespace NBWAPI
         /// the unit starts at in the beginning of the game. This is used to access the positions of
         /// static neutral units such as mineral fields when they are not visible.
         /// </summary>
-        /// <returns>{@link Position} indicating the unit's initial position when it was created.
-        /// Returns {@link Position#Unknown} if this unit was not a static neutral unit in the beginning of
+        /// <returns><see cref="Position"/> indicating the unit's initial position when it was created.
+        /// Returns <see cref="Position.Unknown"/> if this unit was not a static neutral unit in the beginning of
         /// the game.</returns>
         public Position GetInitialPosition()
         {
@@ -1145,7 +1145,7 @@ namespace NBWAPI
         /// {@link Order#Move} is assigned, {@link #getTargetPosition} returns the end of the unit's path, but this
         /// returns the location that the unit is trying to move to.
         /// </summary>
-        /// <returns>{@link Position} that this unit is currently targetting.</returns>
+        /// <returns><see cref="Position"/> that this unit is currently targetting.</returns>
         /// <remarks>
         /// @see#getTargetPosition
         /// @see#getOrder
@@ -1164,7 +1164,7 @@ namespace NBWAPI
         /// Retrieves the position the structure is rallying units to once they are
         /// completed.
         /// </summary>
-        /// <returns>{@link Position} that a completed unit coming from this structure will travel to.
+        /// <returns><see cref="Position"/> that a completed unit coming from this structure will travel to.
         /// Returns {@link Position#None} If this building does not produce units.
         /// <p>
         /// If {@link #getRallyUnit} is valid, then this value is ignored.</returns>
@@ -1254,7 +1254,7 @@ namespace NBWAPI
         /// <summary>
         /// Retrieves the set of units that are contained within this @Bunker or @Transport.
         /// </summary>
-        /// <returns>A List<Unit> object containing all of the units that are loaded inside of the
+        /// <returns>A <see cref="List{Unit}"/> object containing all of the units that are loaded inside of the
         /// current unit.</returns>
         public List<Unit> GetLoadedUnits()
         {
@@ -1353,7 +1353,7 @@ namespace NBWAPI
         /// </summary>
         /// <param name="radius">The radius, in pixels, to search for units.</param>
         /// <param name="pred">The composed function predicate to include only specific (desired) units in the set. Defaults to null, which means no filter.</param>
-        /// <returns>A List<Unit> containing the set of units that match the given criteria.</returns>
+        /// <returns>A <see cref="List{Unit}"/> containing the set of units that match the given criteria.</returns>
         /// <remarks>
         /// @seeGame#getClosestUnit
         /// @see#getUnitsInWeaponRange
@@ -2320,7 +2320,7 @@ namespace NBWAPI
         /// <summary>
         /// Orders the unit(s) to attack move to the specified position.
         /// </summary>
-        /// <param name="target">A {@link Position} to designate as the target. The unit will perform an Attack Move command.</param>
+        /// <param name="target">A <see cref="Position"/> to designate as the target. The unit will perform an Attack Move command.</param>
         /// <param name="shiftQueueCommand">If this value is true, then the order will be queued instead of immediately executed. If this value is omitted, then the order will be executed immediately by default.</param>
         /// <returns>true if the command was passed to Broodwar, and false if BWAPI determined that
         /// the command would fail.

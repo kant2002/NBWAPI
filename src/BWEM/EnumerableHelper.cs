@@ -13,7 +13,7 @@ namespace BWEM
         /// the runtime will allow in an array. There is no guarantee that an allocation under this length
         /// will succeed, but all attempts to allocate a larger array will fail.</para>
         /// <para>This property only applies to single-dimension, zero-bound (SZ) arrays.
-        /// <see cref="Length"/> property may return larger value than this property for multi-dimensional arrays.</para>
+        /// <see cref="Array.Length"/> property may return larger value than this property for multi-dimensional arrays.</para>
         /// </remarks>
         public static int ArrayMaxLength
         {

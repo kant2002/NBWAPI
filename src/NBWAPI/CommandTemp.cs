@@ -3,11 +3,12 @@ namespace NBWAPI
     /// <summary>
     /// Latency Compensation:
     /// Only need to implement LatCom for current frame, the server updates the next frame already if latcom is enabled.
-    /// Use Caches for all internal state that might be affected by latcom, and add the (current) frame, to let Player & Unit
+    /// Use Caches for all internal state that might be affected by latcom, and add the (current) frame, to let Player &amp; Unit
     /// check if they need to use the cached/latcom version of the value or the from server (or a combination of both)
     /// <p>
     /// Inspiration:
     /// https://github.com/bwapi/bwapi/blob/e4a29d73e6021037901da57ceb06e37248760240/bwapi/include/BWAPI/Client/CommandTemp.h
+    /// </p>
     /// </summary>
     public class CommandTemp
     {

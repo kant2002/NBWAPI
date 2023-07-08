@@ -1,7 +1,7 @@
 namespace NBWAPI
 {
     /// <summary>
-    /// Used in <see cref="UnitCommand/>.
+    /// Used in <see cref="UnitCommand" />.
     /// </summary>
     public enum CommandType
     {

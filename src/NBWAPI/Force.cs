@@ -5,11 +5,12 @@ using System.Linq;
 namespace NBWAPI
 {
     /// <summary>
-    /// The {@link Force} class is used to get information about each force in a match.
+    /// The <see cref="Force"/> class is used to get information about each force in a match.
     /// Normally this is considered a team.
     /// <p>
     /// It is not called a team because players on the same force do not necessarily need
     /// to be allied at the beginning of a match.
+    /// </p>
     /// </summary>
     public sealed class Force : IEquatable<Force>, IComparable<Force>
     {
@@ -25,16 +26,16 @@ namespace NBWAPI
         }
 
         /// <summary>
-        /// Retrieves the unique ID that represents this {@link Force}.
+        /// Retrieves the unique ID that represents this <see cref="Force"/>.
         /// </summary>
-        /// <returns>An integer containing the ID for the {@link Force}.</returns>
+        /// <returns>An integer containing the ID for the <see cref="Force"/>.</returns>
         public int GetID()
         {
             return _id;
         }
 
         /// <summary>
-        /// Retrieves the name of the {@link Force}.
+        /// Retrieves the name of the <see cref="Force"/>.
         /// </summary>
         /// <returns>A String object containing the name of the force.</returns>
         public string GetName()
@@ -43,9 +44,9 @@ namespace NBWAPI
         }
 
         /// <summary>
-        /// Retrieves the set of players that belong to this {@link Force}.
+        /// Retrieves the set of players that belong to this <see cref="Force"/>.
         /// </summary>
-        /// <returns>A List<Player> object containing the players that are part of this {@link Force}.</returns>
+        /// <returns>A <see cref="List{Player}"/> object containing the players that are part of this <see cref="Force"/>.</returns>
         public List<Player> GetPlayers()
         {
             return _game.GetPlayers().Where(x => Equals(x.GetForce())).ToList();

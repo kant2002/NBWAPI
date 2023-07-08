@@ -8,7 +8,7 @@ namespace NBWAPI
     /// <seealso cref="DamageType"/>
     /// <seealso cref="UnitType"/>
     /// <seealso cref="UnitSizeType"/>
-    /// [View on Starcraft Campendium (Official Website)](http://classic.battle.net/scc/gs/damage.shtml)<br>
+    /// [View on Starcraft Campendium (Official Website)](http://classic.battle.net/scc/gs/damage.shtml)<br/>
     /// </remarks>
     public enum UnitSizeType
     {

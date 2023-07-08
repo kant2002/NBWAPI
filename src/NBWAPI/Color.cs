@@ -10,6 +10,7 @@ namespace NBWAPI
     /// <p>
     /// Starcraft uses a 256 color palette for rendering. Thus, the colors available are
     /// limited to this palette.
+    /// </p>
     /// </summary>
     public sealed class Color
     {
@@ -74,6 +75,7 @@ namespace NBWAPI
         /// given rgb values. On its first call, the colors in the palette will be sorted for fast indexing.
         /// <p>
         /// This function computes the distance of the RGB values and may not be accurate.
+        /// </p>
         /// </summary>
         /// <param name="red">The amount of red.</param>
         /// <param name="green">The amount of green.</param>

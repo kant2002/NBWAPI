@@ -7,7 +7,7 @@
     {
         /// <summary>
         /// Identifies whether or not this type is used for the pre-game lobby.
-        /// A type such as <see cref="PlayerType.ComputerLeft" would only appear in-game when a computer player is defeated.
+        /// A type such as <see cref="PlayerType.ComputerLeft"/> would only appear in-game when a computer player is defeated.
         /// </summary>
         /// <param name="playerType">The player type.</param>
         /// <returns>true if this type can appear in the pre-game lobby, false otherwise.</returns>

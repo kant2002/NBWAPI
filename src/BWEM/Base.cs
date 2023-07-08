@@ -136,7 +136,7 @@ namespace BWEM
         /// These Minerals are special ones: they are placed at the exact location of this Base (or very close),
         /// thus blocking the building of a Command Center, Nexus, or Hatchery.
         /// So before trying to build this Base, one have to finish gathering these Minerals first.
-        /// Fortunately, these are guaranteed to have their InitialAmount() <= 8.
+        /// Fortunately, these are guaranteed to have their InitialAmount() &lt;= 8.
         /// As an example of blocking Minerals, see the two islands in Andromeda.scx.
         /// Note: if Starting() == true, an empty list is returned.
         /// Note Base::BlockingMinerals() should not be confused with ChokePoint::BlockingNeutral() and Neutral::Blocking():
