@@ -61,6 +61,7 @@ namespace BWEM
             _count = 0;
         }
 
+        /// <inheritdoc/>
         public void Dispose()
         {
             ArrayPool<bool>.Shared.Return(_marks, true);

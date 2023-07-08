@@ -23,26 +23,31 @@ namespace BWEM
             Value = value;
         }
 
+        /// <inheritdoc/>
         public int CompareTo(GroupId other)
         {
             return Value.CompareTo(other.Value);
         }
 
+        /// <inheritdoc/>
         public bool Equals(GroupId other)
         {
             return Value == other.Value;
         }
 
+        /// <inheritdoc/>
         public override bool Equals(object obj)
         {
             return obj is GroupId other && Equals(other);
         }
 
+        /// <inheritdoc/>
         public override int GetHashCode()
         {
             return Value.GetHashCode();
         }
 
+        /// <inheritdoc/>
         public override string ToString()
         {
             return Value.ToString();
