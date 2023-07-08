@@ -85,9 +85,9 @@ namespace NBWAPI
 
         /// <summary>
         /// Retrieves the player's controller type. This allows you to distinguish
-        /// betweeen computer and human players.
+        /// between computer and human players.
         /// </summary>
-        /// <returns>The {@link PlayerType} that identifies who is controlling a player.
+        /// <returns>The <see cref="PlayerType"/> that identifies who is controlling a player.
         /// <p>
         /// Other players using BWAPI will be treated as a human player and return {@link PlayerType#Player}.</returns>
         public PlayerType GetPlayerType()
@@ -113,7 +113,7 @@ namespace NBWAPI
         ///               <p>
         ///               This function will also return false if this player is neutral or an observer, or
         ///               if player is neutral or an observer.</param>
-        /// <remarks>@see#isEnemy</remarks>
+        /// <remarks><seealso cref="Player.IsEnemy(Player)"/></remarks>
         public bool IsAlly(Player player)
         {
             return player != null && !IsNeutral() && !player.IsNeutral() && !IsObserver() && !player.IsObserver() && _playerData.IsAlly(player.GetID());
@@ -127,7 +127,7 @@ namespace NBWAPI
         /// <p>
         /// This function will also return false if this player is neutral or an observer, or if
         /// player is neutral or an observer.</returns>
-        /// <remarks>@see#isAlly</remarks>
+        /// <remarks><seealso cref="Player.IsAlly(Player)"/></remarks>
         public bool IsEnemy(Player player)
         {
             return player != null && !IsNeutral() && !player.IsNeutral() && !IsObserver() && !player.IsObserver() && !_playerData.IsAlly(player.GetID());
@@ -145,7 +145,7 @@ namespace NBWAPI
         /// <summary>
         /// Retrieve's the player's starting location.
         /// </summary>
-        /// <returns>A {@link TilePosition} containing the position of the start location.
+        /// <returns>A <see cref="TilePosition"/> containing the position of the start location.
         /// Returns {@link TilePosition#None} if the player does not have a start location.
         /// Returns {@link TilePosition#Unknown} if an error occured while trying to retrieve the start
         /// location.</returns>
@@ -462,7 +462,7 @@ namespace NBWAPI
         /// <summary>
         /// Retrieves the number units that have died for this player.
         /// </summary>
-        /// <param name="unit">The unit type to query. {@link UnitType} macros are accepted. If this parameter is omitted, then it will use {@link UnitType#AllUnits} by default.</param>
+        /// <param name="unit">The unit type to query. <see cref="UnitType"/> macros are accepted. If this parameter is omitted, then it will use {@link UnitType#AllUnits} by default.</param>
         /// <returns>The total number of units that have died throughout the game.</returns>
         public int DeadUnitCount(UnitType unit)
         {
@@ -502,7 +502,7 @@ namespace NBWAPI
         /// <summary>
         /// Checks if the player has already researched a given technology.
         /// </summary>
-        /// <param name="tech">The {@link TechType} to query.</param>
+        /// <param name="tech">The <see cref="TechType"/> to query.</param>
         /// <returns>true if the player has obtained the given tech, or false if they have not</returns>
         /// <remarks>
         /// @see#isResearching
@@ -517,7 +517,7 @@ namespace NBWAPI
         /// <summary>
         /// Checks if the player is researching a given technology type.
         /// </summary>
-        /// <param name="tech">The {@link TechType} to query.</param>
+        /// <param name="tech">The <see cref="TechType"/> to query.</param>
         /// <returns>true if the player is currently researching the tech, or false otherwise</returns>
         /// <remarks>
         /// @seeUnit#research
@@ -552,7 +552,7 @@ namespace NBWAPI
         /// <summary>
         /// Retrieves the color value of the current player.
         /// </summary>
-        /// <returns>{@link Color} object that represents the color of the current player.</returns>
+        /// <returns><see cref="Color"/> object that represents the color of the current player.</returns>
         public Color GetColor()
         {
             return _color;
@@ -587,7 +587,7 @@ namespace NBWAPI
         /// Retrieves the maximum amount of energy that a unit type will have, taking the
         /// player's energy upgrades into consideration.
         /// </summary>
-        /// <param name="unit">The {@link UnitType} to retrieve the maximum energy for.</param>
+        /// <param name="unit">The <see cref="UnitType"/> to retrieve the maximum energy for.</param>
         /// <returns>Maximum amount of energy that the given unit type can have.</returns>
         public int MaxEnergy(UnitType unit)
         {
@@ -614,7 +614,7 @@ namespace NBWAPI
         /// Retrieves the top speed of a unit type, taking the player's speed upgrades into
         /// consideration.
         /// </summary>
-        /// <param name="unit">The {@link UnitType} to retrieve the top speed for.</param>
+        /// <param name="unit">The <see cref="UnitType"/> to retrieve the top speed for.</param>
         /// <returns>Top speed of the provided unit type for this player.</returns>
         public double TopSpeed(UnitType unit)
         {
@@ -653,7 +653,7 @@ namespace NBWAPI
         /// Retrieves the maximum weapon range of a weapon type, taking the player's weapon
         /// upgrades into consideration.
         /// </summary>
-        /// <param name="weapon">The {@link WeaponType} to retrieve the maximum range for.</param>
+        /// <param name="weapon">The <see cref="WeaponType"/> to retrieve the maximum range for.</param>
         /// <returns>Maximum range of the given weapon type for units owned by this player.</returns>
         public int WeaponMaxRange(WeaponType weapon)
         {
@@ -678,7 +678,7 @@ namespace NBWAPI
         /// Retrieves the sight range of a unit type, taking the player's sight range
         /// upgrades into consideration.
         /// </summary>
-        /// <param name="unit">The {@link UnitType} to retrieve the sight range for.</param>
+        /// <param name="unit">The <see cref="UnitType"/> to retrieve the sight range for.</param>
         /// <returns>Sight range of the provided unit type for this player.</returns>
         public int SightRange(UnitType unit)
         {
@@ -698,7 +698,7 @@ namespace NBWAPI
         /// Retrieves the weapon cooldown of a unit type, taking the player's attack speed
         /// upgrades into consideration.
         /// </summary>
-        /// <param name="unit">The {@link UnitType} to retrieve the damage cooldown for.</param>
+        /// <param name="unit">The <see cref="UnitType"/> to retrieve the damage cooldown for.</param>
         /// <returns>Weapon cooldown of the provided unit type for this player.</returns>
         public int WeaponDamageCooldown(UnitType unit)
         {
@@ -807,7 +807,7 @@ namespace NBWAPI
         /// Retrieves the maximum upgrades available specific to the player. This
         /// value is only different from UpgradeType#maxRepeats in @UMS games.
         /// </summary>
-        /// <param name="upgrade">The {@link UpgradeType} to retrieve the maximum upgrade level for.</param>
+        /// <param name="upgrade">The <see cref="UpgradeType"/> to retrieve the maximum upgrade level for.</param>
         /// <returns>Maximum upgrade level of the given upgrade type.</returns>
         public int GetMaxUpgradeLevel(UpgradeType upgrade)
         {
@@ -818,7 +818,7 @@ namespace NBWAPI
         /// Checks if a technology can be researched by the player. Certain
         /// technologies may be disabled in @UMS game types.
         /// </summary>
-        /// <param name="tech">The {@link TechType} to query.</param>
+        /// <param name="tech">The <see cref="TechType"/> to query.</param>
         /// <returns>true if the tech type is available to the player for research.</returns>
         public bool IsResearchAvailable(TechType tech)
         {
@@ -829,7 +829,7 @@ namespace NBWAPI
         /// Checks if a unit type can be created by the player. Certain unit types
         /// may be disabled in @UMS game types.
         /// </summary>
-        /// <param name="unit">The {@link UnitType} to check.</param>
+        /// <param name="unit">The <see cref="UnitType"/> to check.</param>
         /// <returns>true if the unit type is available to the player.</returns>
         public bool IsUnitAvailable(UnitType unit)
         {

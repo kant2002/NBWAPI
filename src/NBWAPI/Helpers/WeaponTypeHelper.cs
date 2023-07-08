@@ -32,7 +32,7 @@
         * Retrieves the technology type that must be researched before this weapon can
         * be used.
         *
-        * @return {@link TechType} required by this weapon.
+        * @return <see cref="TechType"/> required by this weapon.
         * Returns {@link TechType#None} if no tech type is required to use this weapon.
         * @see TechType#getWeapon
         */
@@ -46,7 +46,7 @@
         * <p>
         * There is a rare case where some hero unit types use the same weapon.
         *
-        * @return The {@link UnitType} that uses this weapon.
+        * @return The <see cref="UnitType"/> that uses this weapon.
         * @see UnitType#groundWeapon
         * @see UnitType#airWeapon
         */
@@ -108,7 +108,7 @@
         /**
         * Retrieves the upgrade type that increases this weapon's damage output.
         *
-        * @return The {@link UpgradeType} used to upgrade this weapon's damage.
+        * @return The <see cref="UpgradeType"/> used to upgrade this weapon's damage.
         * @see #damageBonus
         */
         public static UpgradeType UpgradeType(this WeaponType weaponType)

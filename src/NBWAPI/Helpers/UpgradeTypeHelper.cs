@@ -129,7 +129,7 @@ namespace NBWAPI
 
         /// <summary>
         /// Gets the race the upgrade is for.
-        /// For example, UpgradeType.Terran_Infantry_Armor.getRace() will return {@link Race#Terran}.
+        /// For example, UpgradeType.Terran_Infantry_Armor.getRace() will return <see cref="Race.Terran"/>.
         /// </summary>
         /// <param name="upgradeType">The upgrade type.</param>
         public static Race GetRace(this UpgradeType upgradeType)

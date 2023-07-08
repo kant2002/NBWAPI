@@ -6,7 +6,7 @@ using System.Linq;
 namespace NBWAPI
 {
     /// <summary>
-    /// The {@link Game} class is implemented by BWAPI and is the primary means of obtaining all
+    /// The <see cref="Game"/> class is implemented by BWAPI and is the primary means of obtaining all
     /// game state information from Starcraft Broodwar. Game state information includes all units,
     /// resources, players, forces, bullets, terrain, fog of war, regions, etc.
     /// </summary>
@@ -493,10 +493,10 @@ namespace NBWAPI
         }
 
         /// <summary>
-        /// Retrieves the {@link Player} object associated with a given identifier.
+        /// Retrieves the <see cref="Player"/> object associated with a given identifier.
         /// </summary>
-        /// <param name="playerID">The identifier for the {@link Player} object.</param>
-        /// <returns>{@link Player} object mapped to the given playerID. null if the given identifier is invalid.</returns>
+        /// <param name="playerID">The identifier for the <see cref="Player"/> object.</param>
+        /// <returns><see cref="Player"/> object mapped to the given playerID. null if the given identifier is invalid.</returns>
         public Player GetPlayer(int playerID)
         {
             if (playerID < 0 || playerID >= _players.Length)
@@ -508,10 +508,10 @@ namespace NBWAPI
         }
 
         /// <summary>
-        /// Retrieves the {@link Unit} object associated with a given identifier.
+        /// Retrieves the <see cref="Unit"/> object associated with a given identifier.
         /// </summary>
-        /// <param name="unitID">The identifier for the {@link Unit} object.</param>
-        /// <returns>{@link Unit} object mapped to the given unitID. null if the given identifier is invalid.</returns>
+        /// <param name="unitID">The identifier for the <see cref="Unit"/> object.</param>
+        /// <returns><see cref="Unit"/> object mapped to the given unitID. null if the given identifier is invalid.</returns>
         public Unit GetUnit(int unitID)
         {
             if (unitID < 0 || unitID >= _units.Length)
@@ -523,10 +523,10 @@ namespace NBWAPI
         }
 
         /// <summary>
-        /// Retrieves the {@link Region} object associated with a given identifier.
+        /// Retrieves the <see cref="Region"/> object associated with a given identifier.
         /// </summary>
-        /// <param name="regionID">The identifier for the {@link Region} object.</param>
-        /// <returns>{@link Region} object mapped to the given regionID. Returns null if the given ID is invalid.</returns>
+        /// <param name="regionID">The identifier for the <see cref="Region"/> object.</param>
+        /// <returns><see cref="Region"/> object mapped to the given regionID. Returns null if the given ID is invalid.</returns>
         public Region GetRegion(int regionID)
         {
             if (regionID < 0 || regionID >= _regions.Length)
@@ -538,9 +538,9 @@ namespace NBWAPI
         }
 
         /// <summary>
-        /// Retrieves the {@link GameType} of the current game.
+        /// Retrieves the <see cref="GameType"/> of the current game.
         /// </summary>
-        /// <returns>{@link GameType} indicating the rules of the match.</returns>
+        /// <returns><see cref="GameType"/> indicating the rules of the match.</returns>
         /// <remarks>@seeGameType</remarks>
         public GameType GetGameType()
         {
@@ -548,10 +548,10 @@ namespace NBWAPI
         }
 
         /// <summary>
-        /// Retrieves the current latency setting that the game is set to. {@link Latency}
+        /// Retrieves the current latency setting that the game is set to. <see cref="Latency"/>
         /// indicates the delay between issuing a command and having it processed.
         /// </summary>
-        /// <returns>The {@link Latency} setting of the game, which is of Latency.</returns>
+        /// <returns>The <see cref="Latency"/> setting of the game, which is of Latency.</returns>
         /// <remarks>@seeLatency</remarks>
         public Latency GetLatency()
         {
@@ -699,7 +699,7 @@ namespace NBWAPI
         /// callback.
         /// </p>
         /// </summary>
-        /// <param name="flag">The <see cref="Fla"/> entry describing the flag's effects on BWAPI.</param>
+        /// <param name="flag">The <see cref="Flag"/> entry describing the flag's effects on BWAPI.</param>
         /// <remarks>@seeFlag</remarks>
         public void EnableFlag(Flag flag)
         {
@@ -1070,7 +1070,7 @@ namespace NBWAPI
         /// </summary>
         /// <param name="x">The x pixel coordinate to check.</param>
         /// <param name="y">The y pixel coordinate to check.</param>
-        /// <param name="unitType">Checks if the given {@link UnitType} requires power or not. If ommitted, then it will assume that the position requires power for any unit type.</param>
+        /// <param name="unitType">Checks if the given <see cref="UnitType"/> requires power or not. If ommitted, then it will assume that the position requires power for any unit type.</param>
         /// <returns>true if the type at the given position will have power, false if the type at the given position will be unpowered.</returns>
         public bool HasPowerPrecise(int x, int y, UnitType unitType)
         {
@@ -1319,7 +1319,7 @@ namespace NBWAPI
         /// player. These include resources, supply, technology tree, availability, and
         /// required units.
         /// </summary>
-        /// <param name="type">The {@link UnitType} to check.</param>
+        /// <param name="type">The <see cref="UnitType"/> to check.</param>
         /// <param name="builder">The Unit that will be used to build/train the provided unit type. If this value is null or excluded, then the builder will be excluded in the check.</param>
         /// <returns>true indicating that the type can be made. If builder is provided, then it is
         /// only true if builder can make the type. Otherwise it will return false, indicating
@@ -1483,8 +1483,8 @@ namespace NBWAPI
         /// current player. These include resources, technology tree, availability, and
         /// required units.
         /// </summary>
-        /// <param name="type">The {@link TechType} to check.</param>
-        /// <param name="unit">The {@link Unit} that will be used to research the provided technology type. If this value is null or excluded, then the unit will be excluded in the check.</param>
+        /// <param name="type">The <see cref="TechType"/> to check.</param>
+        /// <param name="unit">The <see cref="Unit"/> that will be used to research the provided technology type. If this value is null or excluded, then the unit will be excluded in the check.</param>
         /// <param name="checkCanIssueCommandType">TODO fill this in</param>
         /// <returns>true indicating that the type can be researched. If unit is provided, then it is
         /// only true if unit can research the type. Otherwise it will return false, indicating
@@ -1560,8 +1560,8 @@ namespace NBWAPI
         /// current player. These include resources, technology tree, availability, and
         /// required units.
         /// </summary>
-        /// <param name="type">The {@link UpgradeType} to check.</param>
-        /// <param name="unit">The {@link Unit} that will be used to upgrade the provided upgrade type. If this value is null or excluded, then the unit will be excluded in the check.</param>
+        /// <param name="type">The <see cref="UpgradeType"/> to check.</param>
+        /// <param name="unit">The <see cref="Unit"/> that will be used to upgrade the provided upgrade type. If this value is null or excluded, then the unit will be excluded in the check.</param>
         /// <param name="checkCanIssueCommandType">TODO fill this in</param>
         /// <returns>true indicating that the type can be upgraded. If unit is provided, then it is
         /// only true if unit can upgrade the type. Otherwise it will return false, indicating
@@ -1625,7 +1625,7 @@ namespace NBWAPI
         /// Retrieves the set of all starting locations for the current map. A
         /// starting location is essentially a candidate for a player's spawn point.
         /// </summary>
-        /// <returns>A List<TilePosition> containing all the {@link TilePosition} objects that indicate a start
+        /// <returns>A List<TilePosition> containing all the <see cref="TilePosition"/> objects that indicate a start
         /// location.</returns>
         /// <remarks>@seePlayer#getStartLocation</remarks>
         public List<TilePosition> GetStartLocations()
@@ -1813,7 +1813,7 @@ namespace NBWAPI
         /// is not capable of executing the command, then it is simply ignored.
         /// </summary>
         /// <param name="units">A <see cref="List{Unit}"/> containing all the units to issue the command for.</param>
-        /// <param name="command">A {@link UnitCommand} object containing relevant information about the command to be issued. The {@link Unit} object associated with the command will be ignored.</param>
+        /// <param name="command">A <see cref="UnitCommand"/> object containing relevant information about the command to be issued. The <see cref="Unit"/> object associated with the command will be ignored.</param>
         /// <returns>true if any one of the units in the List<Unit> were capable of executing the
         /// command, and false if none of the units were capable of executing the command.</returns>
         public bool IssueCommand(List<Unit> units, UnitCommand command)
@@ -1848,7 +1848,7 @@ namespace NBWAPI
         }
 
         /// <summary>
-        /// Retrieves the {@link Player} interface that represents the enemy player. If
+        /// Retrieves the <see cref="Player"/> interface that represents the enemy player. If
         /// there is more than one enemy, and that enemy is destroyed, then this function will still
         /// retrieve the same, defeated enemy. If you wish to handle multiple opponents, see the
         /// {@link Game#enemies} function.
@@ -1861,10 +1861,10 @@ namespace NBWAPI
         }
 
         /// <summary>
-        /// Retrieves the {@link Player} object representing the neutral player.
+        /// Retrieves the <see cref="Player"/> object representing the neutral player.
         /// The neutral player owns all the resources and critters on the map by default.
         /// </summary>
-        /// <returns>{@link Player} indicating the neutral player.</returns>
+        /// <returns><see cref="Player"/> indicating the neutral player.</returns>
         public Player Neutral()
         {
             return _neutral;

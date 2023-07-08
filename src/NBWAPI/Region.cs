@@ -197,7 +197,7 @@ namespace NBWAPI
         /// <summary>
         /// Retrieves the closest accessible neighbor region.
         /// </summary>
-        /// <returns>The closest {@link Region} that is accessible.</returns>
+        /// <returns>The closest <see cref="Region"/> that is accessible.</returns>
         public Region GetClosestAccessibleRegion()
         {
             return _closestAccessibleRegion;
@@ -206,7 +206,7 @@ namespace NBWAPI
         /// <summary>
         /// Retrieves the closest inaccessible neighbor region.
         /// </summary>
-        /// <returns>The closest {@link Region} that is inaccessible.</returns>
+        /// <returns>The closest <see cref="Region"/> that is inaccessible.</returns>
         public Region GetClosestInaccessibleRegion()
         {
             return _closestInaccessibleRegion;
@@ -217,7 +217,7 @@ namespace NBWAPI
         /// <p>
         /// Ignores all collisions.
         /// </summary>
-        /// <param name="other">The target {@link Region} to calculate distance to.</param>
+        /// <param name="other">The target <see cref="Region"/> to calculate distance to.</param>
         /// <returns>The integer distance from this Region to other.</returns>
         public int GetDistance(Region other)
         {

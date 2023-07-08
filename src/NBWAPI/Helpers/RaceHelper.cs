@@ -64,18 +64,18 @@ namespace NBWAPI
         /// In Starcraft, transports will allow you to carry ground units over unpassable terrain.
         /// </summary>
         /// <param name="race">The race.</param>
-        /// <returns>{@link UnitType} for transportation.</returns>
+        /// <returns><see cref="UnitType"/> for transportation.</returns>
         public static UnitType GetTransport(this Race race)
         {
             return _transportTypes[(int)race];
         }
 
         /// <summary>
-        /// Retrieves the default supply provider {@link UnitType} for this race that is used to  construct units.
+        /// Retrieves the default supply provider <see cref="UnitType"/> for this race that is used to  construct units.
         /// In Starcraft, training, morphing, or warping in units requires that the player has sufficient supply available for their Race.
         /// </summary>
         /// <param name="race">The race.</param>
-        /// <returns>{@link UnitType} that provides the player with supply.</returns>
+        /// <returns><see cref="UnitType"/> that provides the player with supply.</returns>
         public static UnitType GetSupplyProvider(this Race race)
         {
             return _supplyTypes[(int)race];

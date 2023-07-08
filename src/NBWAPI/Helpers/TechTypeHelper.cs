@@ -116,7 +116,7 @@ namespace NBWAPI
         }
 
         /// <summary>
-        /// Retrieves the amount of energy needed to use this {@link TechType} as an ability.
+        /// Retrieves the amount of energy needed to use this <see cref="TechType"/> as an ability.
         /// </summary>
         /// <param name="techType">The tech type.</param>
         /// <returns>Energy cost of the ability.</returns>

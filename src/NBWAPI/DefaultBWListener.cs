@@ -1,7 +1,7 @@
 namespace NBWAPI
 {
     /// <summary>
-    /// Convenience class that extends all methods in {@link BWEventListener}.
+    /// Convenience class that extends all methods in <see cref="IBWEventListener"/>
     /// Not all of the methods need an implementation.
     /// </summary>
     public class DefaultBWListener : IBWEventListener

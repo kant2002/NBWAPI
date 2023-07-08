@@ -34,9 +34,9 @@ namespace NBWAPI
         }
 
         /**
-        * Retrieves the {@link Race} that the unit type belongs to.
+        * Retrieves the <see cref="Race"/> that the unit type belongs to.
         *
-        * @return {@link Race} indicating the race that owns this unit type.
+        * @return <see cref="Race"/> indicating the race that owns this unit type.
         * Returns {@link Race#None} indicating that the unit type does not belong to any particular race (a
         * critter for example).
         */
@@ -49,7 +49,7 @@ namespace NBWAPI
         * Obtains the source unit type that is used to build or train this unit type, as well as the
         * amount of them that are required.
         *
-        * @return std#pair in which the first value is the {@link UnitType} that builds this unit type, and
+        * @return std#pair in which the first value is the <see cref="UnitType"/> that builds this unit type, and
         * the second value is the number of those types that are required (this value is 2 for @Archons, and 1 for all other types).
         * Returns pair({@link UnitType#None},0) If this unit type cannot be made by the player.
         */
@@ -82,11 +82,11 @@ namespace NBWAPI
         }
 
         /**
-        * Identifies the required {@link TechType} in order to create certain units.
+        * Identifies the required <see cref="TechType"/> in order to create certain units.
         * <p>
         * The only unit that requires a technology is the @Lurker, which needs @Lurker_Aspect.
         *
-        * @return {@link TechType} indicating the technology that must be researched in order to create this
+        * @return <see cref="TechType"/> indicating the technology that must be researched in order to create this
         * unit type.
         * Returns {@link TechType#None} If creating this unit type does not require a technology to be
         * researched.
@@ -99,7 +99,7 @@ namespace NBWAPI
         /**
         * Retrieves the cloaking technology associated with certain units.
         *
-        * @return {@link TechType} referring to the cloaking technology that this unit type uses as an
+        * @return <see cref="TechType"/> referring to the cloaking technology that this unit type uses as an
         * ability.
         * Returns {@link TechType#None} If this unit type does not have an active cloak ability.
         */
@@ -147,7 +147,7 @@ namespace NBWAPI
         * Retrieves the upgrade type used to increase the armor of this unit type. For each upgrade,
         * this unit type gains +1 additional armor.
         *
-        * @return {@link UpgradeType} indicating the upgrade that increases this unit type's armor amount.
+        * @return <see cref="UpgradeType"/> indicating the upgrade that increases this unit type's armor amount.
         */
         public static UpgradeType ArmorUpgrade(this UnitType unitType)
         {
@@ -358,7 +358,7 @@ namespace NBWAPI
         * Retrieves the tile size of this unit type. Used for determining the tile size of
         * structures.
         *
-        * @return {@link TilePosition} containing the width (x) and height (y) of the unit type, in tiles.
+        * @return <see cref="TilePosition"/> containing the width (x) and height (y) of the unit type, in tiles.
         */
         public static TilePosition TileSize(this UnitType unitType)
         {
@@ -442,7 +442,7 @@ namespace NBWAPI
         /**
         * Retrieves this unit type's weapon type used when attacking targets on the ground.
         *
-        * @return {@link WeaponType} used as this unit type's ground weapon.
+        * @return <see cref="WeaponType"/> used as this unit type's ground weapon.
         * @see #maxGroundHits
         * @see #airWeapon
         */

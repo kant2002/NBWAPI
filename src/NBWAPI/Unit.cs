@@ -5,8 +5,8 @@ using System.Linq;
 namespace NBWAPI
 {
     /// <summary>
-    /// The {@link Unit} class is used to get information about individual units as well as issue
-    /// orders to units. Each unit in the game has a unique {@link Unit} object, and {@link Unit} objects
+    /// The <see cref="Unit"/> class is used to get information about individual units as well as issue
+    /// orders to units. Each unit in the game has a unique <see cref="Unit"/> object, and <see cref="Unit"/> objects
     /// are not deleted until the end of the match (so you don't need to worry about unit pointers
     /// becoming invalid).
     /// <p>
@@ -143,7 +143,7 @@ namespace NBWAPI
         /// <summary>
         /// Retrieves the unit's type.
         /// </summary>
-        /// <returns>A {@link UnitType} objects representing the unit's type. Returns {@link UnitType#Unknown} if this unit is inaccessible or cannot be determined.</returns>
+        /// <returns>A <see cref="UnitType"/> objects representing the unit's type. Returns {@link UnitType#Unknown} if this unit is inaccessible or cannot be determined.</returns>
         /// <remarks>@see#getInitialType</remarks>
         public UnitType GetUnitType()
         {
@@ -192,7 +192,7 @@ namespace NBWAPI
         /// <p>
         /// This tile position is the tile that is at the top left corner of the structure.
         /// </summary>
-        /// <returns>{@link TilePosition} object representing the unit's current tile position. Returns {@link TilePosition#Unknown} if this unit is inaccessible.</returns>
+        /// <returns><see cref="TilePosition"/> object representing the unit's current tile position. Returns {@link TilePosition#Unknown} if this unit is inaccessible.</returns>
         /// <remarks>
         /// @see#getPosition
         /// @see#getInitialTilePosition
@@ -236,9 +236,9 @@ namespace NBWAPI
         }
 
         /// <summary>
-        /// Retrieves the {@link Region} that the center of the unit is in.
+        /// Retrieves the <see cref="Region"/> that the center of the unit is in.
         /// </summary>
-        /// <returns>The {@link Region} object that contains this unit. Returns null if the unit is inaccessible.</returns>
+        /// <returns>The <see cref="Region"/> object that contains this unit. Returns null if the unit is inaccessible.</returns>
         public Region GetRegion()
         {
             return _game.GetRegionAt(GetPosition());
@@ -493,7 +493,7 @@ namespace NBWAPI
         /// return true if one of the unit's corners is on walkable terrain (i.e. if the unit is expected
         /// to return to the walkable terrain).
         /// </summary>
-        /// <param name="target">A <see cref="Position"/> or a {@link Unit} that is used to determine if this unit has a path to the target.</param>
+        /// <param name="target">A <see cref="Position"/> or a <see cref="Unit"/> that is used to determine if this unit has a path to the target.</param>
         /// <returns>true If there is a path between this unit and the target position, otherwise it will return false.</returns>
         /// <remarks>@seeGame#hasPath</remarks>
         public bool HasPath(Position target)
@@ -525,7 +525,7 @@ namespace NBWAPI
         /// <summary>
         /// Retrieves the last successful command that was sent to BWAPI.
         /// </summary>
-        /// <returns>A {@link UnitCommand} object containing information about the command that was processed.</returns>
+        /// <returns>A <see cref="UnitCommand"/> object containing information about the command that was processed.</returns>
         /// <remarks>@see#getLastCommandFrame</remarks>
         public UnitCommand GetLastCommand()
         {
@@ -533,7 +533,7 @@ namespace NBWAPI
         }
 
         /// <summary>
-        /// Retrieves the {@link Player} that last attacked this unit.
+        /// Retrieves the <see cref="Player"/> that last attacked this unit.
         /// </summary>
         /// <returns>Player object representing the player that last attacked this unit. Returns null if this unit was not attacked.</returns>
         public Player GetLastAttackingPlayer()
@@ -546,7 +546,7 @@ namespace NBWAPI
         /// starts as in the beginning of the game. This is used to access the types of static neutral
         /// units such as mineral fields when they are not visible.
         /// </summary>
-        /// <returns>{@link UnitType} of this unit as it was when it was created.
+        /// <returns><see cref="UnitType"/> of this unit as it was when it was created.
         /// Returns {@link UnitType#Unknown} if this unit was not a static neutral unit in the beginning of the game.</returns>
         public UnitType GetInitialType()
         {
@@ -572,7 +572,7 @@ namespace NBWAPI
         /// tile positions of static neutral units such as mineral fields when they are not visible.
         /// The build tile position corresponds to the upper left corner of the unit.
         /// </summary>
-        /// <returns>{@link TilePosition} indicating the unit's initial tile position when it was created.
+        /// <returns><see cref="TilePosition"/> indicating the unit's initial tile position when it was created.
         /// Returns {@link TilePosition#Unknown} if this unit was not a static neutral unit in the beginning of
         /// the game.</returns>
         public TilePosition GetInitialTilePosition()
@@ -845,10 +845,10 @@ namespace NBWAPI
 
         /// <summary>
         /// Retrieves the building type that a @worker is about to construct. If
-        /// the unit is morphing or is an incomplete structure, then this returns the {@link UnitType} that it
+        /// the unit is morphing or is an incomplete structure, then this returns the <see cref="UnitType"/> that it
         /// will become when it has completed morphing/constructing.
         /// </summary>
-        /// <returns>{@link UnitType} indicating the type that a @worker is about to construct, or an
+        /// <returns><see cref="UnitType"/> indicating the type that a @worker is about to construct, or an
         /// incomplete unit will be when completed.</returns>
         public UnitType GetBuildType()
         {
@@ -911,7 +911,7 @@ namespace NBWAPI
         /// <summary>
         /// Retrieves the technology that this unit is currently researching.
         /// </summary>
-        /// <returns>{@link TechType} indicating the technology being researched by this unit.
+        /// <returns><see cref="TechType"/> indicating the technology being researched by this unit.
         /// Returns {@link TechType#None} if this unit is not researching anything.</returns>
         /// <remarks>
         /// @see#research
@@ -932,7 +932,7 @@ namespace NBWAPI
         /// <summary>
         /// Retrieves the upgrade that this unit is currently upgrading.
         /// </summary>
-        /// <returns>{@link UpgradeType} indicating the upgrade in progress by this unit.
+        /// <returns><see cref="UpgradeType"/> indicating the upgrade in progress by this unit.
         /// Returns {@link UpgradeType#None} if this unit is not upgrading anything.</returns>
         /// <remarks>
         /// @see#upgrade
@@ -990,7 +990,7 @@ namespace NBWAPI
 
         /// <summary>
         /// Retrieves the amount of time until the unit is done researching its currently
-        /// assigned {@link TechType}.
+        /// assigned <see cref="TechType"/>.
         /// </summary>
         /// <returns>The remaining research time, in frames, for the current technology being
         /// researched by this unit.
@@ -1092,7 +1092,7 @@ namespace NBWAPI
         /// Retrieves the primary Order that the unit is assigned. Primary orders
         /// are distinct actions such as {@link Order#AttackUnit} and {@link Order#PlayerGuard}.
         /// </summary>
-        /// <returns>The primary {@link Order} that the unit is executing.</returns>
+        /// <returns>The primary <see cref="Order"/> that the unit is executing.</returns>
         public Order GetOrder()
         {
             if (_game.IsLatComEnabled() && Self().Order.Valid(_game.GetFrameCount()))
@@ -1108,7 +1108,7 @@ namespace NBWAPI
         /// orders are run in the background as a sub-order. An example would be {@link Order#TrainFighter},
         /// because a @Carrier can move and train fighters at the same time.
         /// </summary>
-        /// <returns>The secondary {@link Order} that the unit is executing.</returns>
+        /// <returns>The secondary <see cref="Order"/> that the unit is executing.</returns>
         public Order GetSecondaryOrder()
         {
             if (_game.IsLatComEnabled() && Self().SecondaryOrder.Valid(_game.GetFrameCount()))
@@ -1125,7 +1125,7 @@ namespace NBWAPI
         /// comes in range of your @Marine, the @Marine will start attacking it, and getOrderTarget
         /// will be set in this case, but not getTarget.
         /// </summary>
-        /// <returns>The {@link Unit} that this unit is currently targetting.</returns>
+        /// <returns>The <see cref="Unit"/> that this unit is currently targetting.</returns>
         /// <remarks>
         /// @see#getTarget
         /// @see#getOrder
@@ -1186,7 +1186,7 @@ namespace NBWAPI
         /// Retrieves the unit the structure is rallying units to once they are completed.
         /// Units will then follow the targetted unit.
         /// </summary>
-        /// <returns>{@link Unit} that a completed unit coming from this structure will travel to.
+        /// <returns><see cref="Unit"/> that a completed unit coming from this structure will travel to.
         /// Returns null if the structure is not rallied to a unit or it does not produce units.
         /// <p>
         /// A rallied unit takes precedence over a rallied position. That is if the return value
@@ -1219,7 +1219,7 @@ namespace NBWAPI
         /// Retrieves the @Nydus_Canal that is attached to this one. Every @Nydus_Canal
         /// can place a "Nydus Exit" which, when connected, can be travelled through by @Zerg units.
         /// </summary>
-        /// <returns>{@link Unit} object representing the @Nydus_Canal connected to this one.
+        /// <returns><see cref="Unit"/> object representing the @Nydus_Canal connected to this one.
         /// Returns null if the unit is not a @Nydus_Canal, is not owned, or has not placed a Nydus
         /// Exit.</returns>
         public Unit GetNydusExit()
@@ -1234,7 +1234,7 @@ namespace NBWAPI
         /// <p>
         /// If your bot is strictly melee/1v1, then this method is not necessary.
         /// </summary>
-        /// <returns>The {@link Unit} object that represents the power-up.
+        /// <returns>The <see cref="Unit"/> object that represents the power-up.
         /// Returns null if the unit is not carrying anything.</returns>
         public Unit GetPowerUp()
         {
@@ -2259,7 +2259,7 @@ namespace NBWAPI
         /// only, and is recommended to use one of the more specific command functions when writing an
         /// AI.
         /// </summary>
-        /// <param name="command">A {@link UnitCommand} containing command parameters such as the type, position, target, etc.</param>
+        /// <param name="command">A <see cref="UnitCommand"/> containing command parameters such as the type, position, target, etc.</param>
         /// <returns>true if the command was passed to Broodwar, and false if BWAPI determined that
         /// the command would fail.
         /// <p>
@@ -2347,8 +2347,8 @@ namespace NBWAPI
         /// <summary>
         /// Orders the worker unit(s) to construct a structure at a target position.
         /// </summary>
-        /// <param name="type">The {@link UnitType} to build.</param>
-        /// <param name="target">A {@link TilePosition} to specify the build location, specifically the upper-left corner of the location. If the target is not specified, then the function call will be redirected to the train command.</param>
+        /// <param name="type">The <see cref="UnitType"/> to build.</param>
+        /// <param name="target">A <see cref="TilePosition"/> to specify the build location, specifically the upper-left corner of the location. If the target is not specified, then the function call will be redirected to the train command.</param>
         /// <returns>true if the command was passed to Broodwar, and false if BWAPI determined that
         /// the command would fail.
         /// <p>
@@ -2369,7 +2369,7 @@ namespace NBWAPI
         /// <summary>
         /// Orders the @Terran structure(s) to construct an add-on.
         /// </summary>
-        /// <param name="type">The add-on {@link UnitType} to construct.</param>
+        /// <param name="type">The add-on <see cref="UnitType"/> to construct.</param>
         /// <returns>true if the command was passed to Broodwar, and false if BWAPI determined that
         /// the command would fail.
         /// <p>
@@ -2389,9 +2389,9 @@ namespace NBWAPI
 
         /// <summary>
         /// Orders the unit(s) to add a UnitType to its training queue, or morphs into the
-        /// {@link UnitType} if it is @Zerg.
+        /// <see cref="UnitType"/> if it is @Zerg.
         /// </summary>
-        /// <param name="type">The {@link UnitType} to train.</param>
+        /// <param name="type">The <see cref="UnitType"/> to train.</param>
         /// <returns>true if the command was passed to Broodwar, and false if BWAPI determined that
         /// the command would fail.
         /// <p>
@@ -2416,9 +2416,9 @@ namespace NBWAPI
         }
 
         /// <summary>
-        /// Orders the unit(s) to morph into a different {@link UnitType}.
+        /// Orders the unit(s) to morph into a different <see cref="UnitType"/>.
         /// </summary>
-        /// <param name="type">The {@link UnitType} to morph into.</param>
+        /// <param name="type">The <see cref="UnitType"/> to morph into.</param>
         /// <returns>true if the command was passed to Broodwar, and false if BWAPI determined that
         /// the command would fail.
         /// <p>
@@ -2436,7 +2436,7 @@ namespace NBWAPI
         /// <summary>
         /// Orders the unit to research the given tech type.
         /// </summary>
-        /// <param name="tech">The {@link TechType} to research.</param>
+        /// <param name="tech">The <see cref="TechType"/> to research.</param>
         /// <returns>true if the command was passed to Broodwar, and false if BWAPI determined that
         /// the command would fail.
         /// <p>
@@ -2456,7 +2456,7 @@ namespace NBWAPI
         /// <summary>
         /// Orders the unit to upgrade the given upgrade type.
         /// </summary>
-        /// <param name="upgrade">The {@link UpgradeType} to upgrade.</param>
+        /// <param name="upgrade">The <see cref="UpgradeType"/> to upgrade.</param>
         /// <returns>true if the command was passed to Broodwar, and false if BWAPI determined that
         /// the command would fail.
         /// <p>
@@ -3162,10 +3162,10 @@ namespace NBWAPI
         /// optional boolean arguments. Make sure that the state hasn't changed since the check was
         /// done though (eg a new frame/event, or a command issued). Also see the more specific functions.
         /// </summary>
-        /// <param name="command">A {@link UnitCommand} to check.</param>
-        /// <param name="checkCanUseTechPositionOnPositions">Only used if the command type is {@link UnitCommandType#Use_Tech_Position}. A boolean for whether to perform cheap checks for whether the unit is unable to target any positions using the command's {@link TechType} (i.e. regardless of what the other command parameters are). You can set this to false if you know this check has already just been performed.</param>
-        /// <param name="checkCanUseTechUnitOnUnits">Only used if the command type is {@link UnitCommandType#Use_Tech_Unit}. A boolean for whether to perform cheap checks for whether the unit is unable to target any units using the command's {@link TechType} (i.e. regardless of what the other command parameters are). You can set this to false if you know this check has already just been performed.</param>
-        /// <param name="checkCanBuildUnitType">Only used if the command type is {@link UnitCommandType#Build}. A boolean for whether to perform cheap checks for whether the unit is unable to build the specified {@link UnitType} (i.e. regardless of what the other command parameters are). You can set this to false if you know this check has already just been performed.</param>
+        /// <param name="command">A <see cref="UnitCommand"/> to check.</param>
+        /// <param name="checkCanUseTechPositionOnPositions">Only used if the command type is {@link UnitCommandType#Use_Tech_Position}. A boolean for whether to perform cheap checks for whether the unit is unable to target any positions using the command's <see cref="TechType"/> (i.e. regardless of what the other command parameters are). You can set this to false if you know this check has already just been performed.</param>
+        /// <param name="checkCanUseTechUnitOnUnits">Only used if the command type is {@link UnitCommandType#Use_Tech_Unit}. A boolean for whether to perform cheap checks for whether the unit is unable to target any units using the command's <see cref="TechType"/> (i.e. regardless of what the other command parameters are). You can set this to false if you know this check has already just been performed.</param>
+        /// <param name="checkCanBuildUnitType">Only used if the command type is {@link UnitCommandType#Build}. A boolean for whether to perform cheap checks for whether the unit is unable to build the specified <see cref="UnitType"/> (i.e. regardless of what the other command parameters are). You can set this to false if you know this check has already just been performed.</param>
         /// <param name="checkCanTargetUnit">Only used for command types that can target a unit. A boolean for whether to perform {@link Unit#canTargetUnit} as a check. You can set this to false if you know this check has already just been performed.</param>
         /// <param name="checkCanIssueCommandType">A boolean for whether to perform {@link Unit#canIssueCommandType} as a check. You can set this to false if you know this check has already just been performed.</param>
         /// <param name="checkCommandibility">A boolean for whether to perform {@link Unit#canCommand} as a check. You can set this to false if you know this check has already just been performed.</param>
@@ -3449,7 +3449,7 @@ namespace NBWAPI
         /// execute the given command type (i.e. regardless of what other possible command parameters
         /// could be).
         /// </summary>
-        /// <param name="ct">A {@link UnitCommandType}.</param>
+        /// <param name="ct">A <see cref="UnitCommandType"/>.</param>
         /// <param name="checkCommandibility">A boolean for whether to perform {@link Unit#canCommand} as a check. You can set this to false if you know this check has already just been performed.</param>
         /// <returns>true if BWAPI was unable to determine whether the command type is invalid, false if an error occurred and the command type is invalid.</returns>
         /// <remarks>
@@ -3571,7 +3571,7 @@ namespace NBWAPI
         /// execute the given command type (i.e. regardless of what other possible command parameters
         /// could be) as part of a List<Unit>.
         /// </summary>
-        /// <param name="ct">A {@link UnitCommandType}.</param>
+        /// <param name="ct">A <see cref="UnitCommandType"/>.</param>
         /// <param name="checkCommandibilityGrouped">A boolean for whether to perform {@link Unit#canCommandGrouped} as a check. You can set this to false if you know this check has already just been performed.</param>
         /// <param name="checkCommandibility">A boolean for whether to perform {@link Unit#canCommand} as a check. You can set this to false if you know this check has already just been performed.</param>
         /// <returns>true if BWAPI was unable to determine whether the command type is invalid, false if an error occurred and the command type is invalid.</returns>

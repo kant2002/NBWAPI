@@ -75,9 +75,9 @@ namespace NBWAPI
         }
 
         /// <summary>
-        /// Retrieves the {@link Player} interface that owns the Bullet.
+        /// Retrieves the <see cref="Player"/> interface that owns the Bullet.
         /// </summary>
-        /// <returns>The owning {@link Player} object. Returns null if the {@link Player} object for this <see cref="Bullet"/> is inaccessible.</returns>
+        /// <returns>The owning <see cref="Player"/> object. Returns null if the <see cref="Player"/> object for this <see cref="Bullet"/> is inaccessible.</returns>
         public Player GetPlayer()
         {
             return _game.GetPlayer(_bulletData.GetPlayer());
@@ -86,16 +86,16 @@ namespace NBWAPI
         /// <summary>
         /// Retrieves the type of this <see cref="Bullet"/>.
         /// </summary>
-        /// <returns>A {@link BulletType} representing the Bullet's type. Returns {@link BulletType#Unknown} if the <see cref="Bullet"/> is inaccessible.</returns>
+        /// <returns>A <see cref="BulletType"/> representing the Bullet's type. Returns {@link BulletType#Unknown} if the <see cref="Bullet"/> is inaccessible.</returns>
         public BulletType GetBulletType()
         {
             return _bulletData.GetBulletType();
         }
 
         /// <summary>
-        /// Retrieves the {@link Unit} that the <see cref="Bullet"/> spawned from.
+        /// Retrieves the <see cref="Unit"/> that the <see cref="Bullet"/> spawned from.
         /// </summary>
-        /// <returns>The owning {@link Unit} object. Returns null if the source can not be identified or is inaccessible.</returns>
+        /// <returns>The owning <see cref="Unit"/> object. Returns null if the source can not be identified or is inaccessible.</returns>
         /// <remarks>@see#getTarget</remarks>
         public Unit GetSource()
         {
@@ -151,7 +151,7 @@ namespace NBWAPI
         /// <summary>
         /// Retrieves the Unit interface that the <see cref="Bullet"/> is heading to.
         /// </summary>
-        /// <returns>The target Unit object, if one exists. Returns null if the Bullet's target {@link Unit} is inaccessible, the <see cref="Bullet"/> is targetting the ground, or if the <see cref="Bullet"/> itself is inaccessible.</returns>
+        /// <returns>The target Unit object, if one exists. Returns null if the Bullet's target <see cref="Unit"/> is inaccessible, the <see cref="Bullet"/> is targetting the ground, or if the <see cref="Bullet"/> itself is inaccessible.</returns>
         /// <remarks>
         /// @see#getTargetPosition
         /// @see#getSource
